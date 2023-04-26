@@ -1,0 +1,11 @@
+{
+	"iss": "https://www.googleapis.com/userinfo/v2/me",
+	"sub": "108437069109213843380",
+	"name": "Test Sam",
+	"email": "testsam892@gmail.com",
+	"picture": "https://lh3.googleusercontent.com/a/AGNmyxaan_qs1nHKrpbBoxdbkjDOczgFMuFfGNOrYV-s=s96-c",
+	"full_name": "Test Sam",
+	"avatar_url": "https://lh3.googleusercontent.com/a/AGNmyxaan_qs1nHKrpbBoxdbkjDOczgFMuFfGNOrYV-s=s96-c",
+	"provider_id": "108437069109213843380",
+	"email_verified": true
+}
