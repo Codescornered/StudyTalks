@@ -21,12 +21,6 @@ export default function SavedPostsPage() {
 						Your saved posts
 					</h1>
 				</Card>
-				{posts.length > 0 &&
-					posts.map((post) => (
-						<div key={post.id}>
-							<PostCard {...post} />
-						</div>
-					))}
 			</UserContextProvider>
 		</Layout>
 	);

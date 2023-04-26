@@ -59,7 +59,7 @@ export default function Home() {
 				<UserContext.Provider value={{ profile: profile }}>
 					<PostForm onPost={fetchPosts} />
 					{posts?.length > 0 &&
-						posts.map((post) => <Post {...post} />)}
+						posts.map((post) => <Post key={post.id} {...post} />)}
 				</UserContext.Provider>
 			</Layout>
 		</div>

@@ -220,12 +220,15 @@ export default function Post({
 			</div>
 			<div>
 				<p className="my-2 text-sm ">{content}</p>
-
 				{photos?.length > 0 && (
-					<div>
+					<div className="flex gap-4">
 						{photos.map((photo) => (
-							<div className="m-4">
-								<img src={photo} className="rounded-md" />
+							<div key={photo} className="">
+								<img
+									src={photo}
+									className="rounded-md"
+									alt=""
+								/>
 							</div>
 						))}
 					</div>

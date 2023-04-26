@@ -12,10 +12,6 @@ import Banner from "@/components/banner";
 import { Truculenta } from "next/font/google";
 export default function Profilepage() {
 	const session = useSession();
-
-	if (!session) {
-		return <LoginPage />;
-	}
 	const [editMode, setEditMode] = useState(false);
 	const router = useRouter();
 	const [profile, setProfile] = useState(null);
@@ -25,13 +21,25 @@ export default function Profilepage() {
 	const [place, setPlace] = useState("");
 	const [about, setAbout] = useState("");
 	const supabase = useSupabaseClient();
-	console.log(profile);
+	const isPosts = pathname.includes("posts") || pathname === "/profile";
+	const isAbout = pathname.includes("about");
+	const isFirends = pathname.includes("friends");
+	const isPhotos = pathname.includes("photos");
+
+	const isMyUser = userId === session?.user?.id;
+	const activeTabclasses =
+		"flex gap-2 px-5 py-1 items-center border-socialYellow border-b-4 bg-yellow-100 bg-opacity-50 rounded-t-md text-yellow-800";
+	const Tabclasses = "flex gap-2 px-5 py-1 items-center";
 	useEffect(() => {
 		if (!userId) {
 			return;
 		}
 		fetchUser();
 	}, [userId]);
+	if (!session) {
+		return <LoginPage />;
+	}
+	console.log(profile);
 
 	function fetchUser() {
 		supabase
@@ -63,15 +71,7 @@ export default function Profilepage() {
 				setEditMode(false);
 			});
 	}
-	const isPosts = pathname.includes("posts") || pathname === "/profile";
-	const isAbout = pathname.includes("about");
-	const isFirends = pathname.includes("friends");
-	const isPhotos = pathname.includes("photos");
 
-	const isMyUser = userId === session?.user?.id;
-	const activeTabclasses =
-		"flex gap-2 px-5 py-1 items-center border-socialYellow border-b-4 bg-yellow-100 bg-opacity-50 rounded-t-md text-yellow-800";
-	const Tabclasses = "flex gap-2 px-5 py-1 items-center";
 	return (
 		<Layout>
 			<Card noPadding={true}>
