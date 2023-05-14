@@ -9,7 +9,6 @@ import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import LoginPage from "./login";
 import { useEffect, useState } from "react";
 import Banner from "@/components/banner";
-import { Truculenta } from "next/font/google";
 export default function Profilepage() {
 	const session = useSession();
 	const [editMode, setEditMode] = useState(false);

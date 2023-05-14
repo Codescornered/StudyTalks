@@ -4,6 +4,7 @@ import { use, useContext, useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import Card from "./Card";
 import Preloader from "./preloader";
+import Link from "next/link";
 
 export default function PostFormCard({ onPost }) {
 	const { profile } = useContext(UserContext);
@@ -60,7 +61,11 @@ export default function PostFormCard({ onPost }) {
 		<Card>
 			<div className="flex gap-3 ">
 				<div>
-					<Avatar url={profile?.avatar} />
+					<Link href={"/profile/" + profile?.id}>
+						<span className="cursor-pointer ">
+							<Avatar url={profile?.avatar} />
+						</span>
+					</Link>
 				</div>
 				{profile && (
 					<textarea
